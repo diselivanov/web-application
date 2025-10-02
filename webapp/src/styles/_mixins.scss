@@ -2,30 +2,22 @@
 @use './_vars' as *;
 @forward '../../node_modules/include-media/dist/_include-media';
 
-@mixin link($color: $blue, $hoverColor: $red) {
-  color: $color;
-  transition: color 200ms ease;
+@mixin link {
+  color: $color-1;
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
-  text-decoration: underline;
 
   &:hover,
   &:active {
-    color: $hoverColor;
-    transition: none;
+    color: $blue;
   }
 }
 
-@mixin h1 {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-@mixin h2 {
-  font-size: 24px;
-  font-weight: bold;
+@mixin header {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 @mixin loader($borderWidth, $size, $color) {

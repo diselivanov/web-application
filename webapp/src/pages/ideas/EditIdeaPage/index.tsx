@@ -50,7 +50,7 @@ export const EditIdeaPage = withPageWrapper({
         <FormItems>
           <Input label="Name" name="name" formik={formik} />
           <Input label="Nick" name="nick" formik={formik} />
-          <Input label="Description" name="description" maxWidth={500} formik={formik} />
+          <Input label="Description" name="description" formik={formik} />
           <Textarea label="Text" name="text" formik={formik} />
           <UploadsToCloudinary label="Images" name="images" type="image" preset="preview" formik={formik} />
           <Alert {...alertProps} />

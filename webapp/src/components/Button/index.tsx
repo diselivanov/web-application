@@ -1,9 +1,11 @@
 import cn from 'classnames'
 import { Link } from 'react-router-dom'
 import css from './index.module.scss'
+import { Loader } from '../Loader'
 
-type ButtonColor = 'red' | 'green'
-export type ButtonProps = {
+type ButtonColor = 'red' | 'blue'
+
+type ButtonProps = {
   children: React.ReactNode
   loading?: boolean
   color?: ButtonColor
@@ -11,10 +13,11 @@ export type ButtonProps = {
   disabled?: boolean
   onClick?: () => void
 }
+
 export const Button = ({
   children,
   loading = false,
-  color = 'green',
+  color = 'blue',
   type = 'submit',
   disabled,
   onClick,
@@ -22,7 +25,7 @@ export const Button = ({
   return (
     <button
       className={cn({
-        [css.button]: true,
+        [css.Button]: true,
         [css[`color-${color}`]]: true,
         [css.disabled]: disabled || loading,
         [css.loading]: loading,
@@ -31,7 +34,11 @@ export const Button = ({
       disabled={disabled || loading}
       onClick={onClick}
     >
-      <span className={css.text}>{children}</span>
+      {loading ? (
+        <Loader type="button" />
+      ) : (
+        <span className={css.text}>{children}</span>
+      )}
     </button>
   )
 }
@@ -39,14 +46,14 @@ export const Button = ({
 export const LinkButton = ({
   children,
   to,
-  color = 'green',
+  color = 'blue',
 }: {
   children: React.ReactNode
   to: string
   color?: ButtonColor
 }) => {
   return (
-    <Link className={cn({ [css.button]: true, [css[`color-${color}`]]: true })} to={to}>
+    <Link className={cn({ [css.Button]: true, [css[`color-${color}`]]: true })} to={to}>
       {children}
     </Link>
   )

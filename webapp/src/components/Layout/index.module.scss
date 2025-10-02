@@ -1,29 +1,17 @@
 @use '../../styles/_vars' as *;
 @use '../../styles/_mixins' as *;
 
-$breakpoint: '<=900px';
-
 .layout {
   display: flex;
   flex-flow: row nowrap;
   height: 100%;
-  @include media($breakpoint) {
-    flex-flow: column nowrap;
-  }
 
   .navigation {
     height: 100%;
     overflow: auto;
     flex: 0 0 200px;
-    padding: 20px 30px;
-    border-right: 1px solid $black;
-    @include media($breakpoint) {
-      overflow: visible;
-      flex: 0 0 auto;
-      height: auto;
-      border-right: none;
-      border-bottom: 1px solid $black;
-    }
+    padding: 10px;
+    border-right: 1px solid $border-color;
 
     .logo {
       padding-top: 2px;
@@ -50,10 +38,6 @@ $breakpoint: '<=900px';
     height: 100%;
     overflow: auto;
     flex: 1 1 100%;
-    padding: 20px 30px;
-    @include media($breakpoint) {
-      overflow: visible;
-      height: auto;
-    }
+    padding: 10px;
   }
 }

@@ -1,6 +1,7 @@
 import { createRef } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { ReactComponent as Logo } from '../../assets/images/logo.svg'
+import { ThemeToggle } from '../ThemeToggle'
 import { useMe } from '../../lib/ctx'
 import {
   getAllIdeasRoute,
@@ -21,6 +22,7 @@ export const Layout = () => {
     <div className={css.layout}>
       <div className={css.navigation}>
         <Logo className={css.logo} />
+        
         <ul className={css.menu}>
           <li className={css.item}>
             <Link className={css.link} to={getAllIdeasRoute()}>
@@ -60,7 +62,10 @@ export const Layout = () => {
             </>
           )}
         </ul>
+
+        <ThemeToggle />
       </div>
+
       <div className={css.content} ref={layoutContentElRef}>
         <Outlet />
       </div>

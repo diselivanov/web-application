@@ -2,21 +2,26 @@
 @use '../../../styles/_mixins' as *;
 
 .filter {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .ideas {
   .idea {
-    padding: 20px;
-    border: 1px solid $black;
+    color: $color-2;
+    padding: 10px;
+    border: 1px solid $border-color;
     border-radius: 10px;
 
     & + .idea {
-      margin-top: 20px;
+      margin-top: 10px;
     }
 
     .ideaLink {
       @include link;
+    }
+
+    &:hover {
+      background-color: $background-2;
     }
   }
 

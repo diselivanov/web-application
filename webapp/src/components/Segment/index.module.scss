@@ -3,11 +3,11 @@
 
 .segment {
   h1.title {
-    @include h1;
+    @include header;
   }
 
   h2.title {
-    @include h2;
+    @include header;
   }
 
   .description {

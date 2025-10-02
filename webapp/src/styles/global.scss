@@ -1,6 +1,6 @@
-@forward '../../node_modules/reset-css/sass/_reset';
+@forward '../../node_modules/reset-css/sass/reset';
 @forward '../../node_modules/react-image-gallery/styles/scss/image-gallery';
-@use './_vars' as *;
+@use './vars' as *;
 
 html,
 body,
@@ -12,19 +12,40 @@ body,
 }
 
 body {
-  font-family: $defaultFontFamily;
-  font-size: $defaultFontSize;
-  background: $defaultBackgroundColor;
-  color: $defaultTextColor;
-  line-height: $defaultLineHeight;
+  background: $background-1;
+  color: $color-1;
+  font-family: $font-family;
+  font-size: $font-size-15;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background-color 0.1s ease, color 0.1s ease, border-color 0.1s ease, box-shadow 0.1s ease;
 }
 
 a {
   text-decoration: none;
+}
+
+input {
+   &::placeholder {
+    color: $color-2;
+    opacity: 0.8;
+   }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(115, 115, 125, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+   background: rgba(115, 115, 125, 0.3);
 }

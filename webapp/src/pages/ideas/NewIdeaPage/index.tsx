@@ -43,7 +43,7 @@ export const NewIdeaPage = withPageWrapper({
         <FormItems>
           <Input name="name" label="Name" formik={formik} />
           <Input name="nick" label="Nick" formik={formik} />
-          <Input name="description" label="Description" formik={formik} maxWidth={500} />
+          <Input name="description" label="Description" formik={formik} />
           <Textarea name="text" label="Text" formik={formik} />
           <UploadsToCloudinary label="Images" name="images" type="image" preset="preview" formik={formik} />
           <Alert {...alertProps} />

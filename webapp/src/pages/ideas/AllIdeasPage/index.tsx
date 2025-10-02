@@ -37,14 +37,14 @@ export const AllIdeasPage = withPageWrapper({
   return (
     <Segment title="All Ideas">
       <div className={css.filter}>
-        <Input maxWidth={'100%'} label="Search" name="search" formik={formik} />
+        <Input label="Search" name="search" formik={formik} />
       </div>
       {isLoading || isRefetching ? (
         <Loader type="section" />
       ) : isError ? (
         <Alert color="red">{error.message}</Alert>
       ) : !data.pages[0].ideas.length ? (
-        <Alert color="brown">Nothing found by search</Alert>
+        <Alert color="blue">Nothing found by search</Alert>
       ) : (
         <div className={css.ideas}>
           <InfiniteScroll

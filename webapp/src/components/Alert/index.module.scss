@@ -1,22 +1,50 @@
-@use '../../styles/_vars' as *;
-@use '../../styles/_mixins' as *;
+@use '../../styles/vars' as *;
+@use '../../styles/mixins' as *;
 
 .alert {
-  padding: 10px;
-  border-radius: $borderRadiusSmall;
+  position: fixed;
+  left: 50%;
+  top: -6px;
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  padding: 8px 16px;
+  border-radius: $border-radius;
+  z-index: 1000;
+  background-color: rgba($color-1, 0.8);
+  backdrop-filter: blur(8px);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  transition:
+    transform 0.1s ,
+    opacity 0.1s ease-out;
+  max-width: 90%;
+  width: auto;
+
+  &.hidden {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
 
   &.red {
-    background-color: #ffd1d1;
-    color: #631717;
+    color: $red;
   }
 
   &.green {
-    background-color: #d7ffd7;
-    color: #2b6d2b;
+    color: $green;
   }
 
-  &.brown {
-    background-color: #e9d5bd;
-    color: #614f39;
+  &.blue {
+    color: $blue;
   }
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.content {
+  flex: 1;
 }
